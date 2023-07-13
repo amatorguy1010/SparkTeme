@@ -1,9 +1,6 @@
 package org.example;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.Column;
+import org.apache.spark.sql.*;
 
 
 public class Main {
@@ -15,6 +12,7 @@ public class Main {
 
         csv.show(false);
 
+        csv = csv.filter(functions.col("Receiving Country Code").isin("LV","MK","MT"));
         csv.groupBy("Receiving Country Code","Sending Country Code")
                     .count()
                     .orderBy(new Column("Receiving Country Code"))
