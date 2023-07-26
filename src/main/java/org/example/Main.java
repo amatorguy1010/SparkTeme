@@ -28,7 +28,27 @@ public class Main {
         String table_LV="Lithuania";
         String table_MK="Makedonia";
         String table_MT="Montenegro";
+        String table_3Countries = "Countries";
 
+
+        Dataset<Row> data_countries = sparkSession.read().option("header", true).csv("/Users/alexandrucampan/MyCodes/Spark/src/main/resources/erasmus.csv");
+
+        data_countries = data_countries.filter(functions.col("Receiving Country Code").isin("LV","MK","MT"));
+
+        data_countries = data_countries.groupBy("Receiving Country Code","Sending Country Code")
+                .count().withColumnRenamed("count","Number Of Students")
+                .orderBy(new Column("Receiving Country Code"));
+        data_countries.show();
+
+        data_countries
+                .write()
+                .mode(SaveMode.Overwrite)
+                .format("jdbc")
+                .option("dbtable",table_3Countries)
+                .option("url",url)
+                .option("user",user)
+                .option("password",password)
+                .save();
         //First Country:LV
 
         Dataset<Row> data_LV = sparkSession.read().option("header", true).csv("/Users/alexandrucampan/MyCodes/Spark/src/main/resources/erasmus.csv");

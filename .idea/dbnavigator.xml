@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -26,6 +26,10 @@
     <filter-actions connection-id="631f1a95-c2cc-4b0f-ab61-40a7e3035279" dataset="Country.LI_Country" active-filter-id="7666892e-04b8-463b-9c5c-fdb0c0566d5d">
       <filter id="7666892e-04b8-463b-9c5c-fdb0c0566d5d" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
     </filter-actions>
+    <filter-actions connection-id="631f1a95-c2cc-4b0f-ab61-40a7e3035279" dataset="Country.Makedonia" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
