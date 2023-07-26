@@ -12,9 +12,9 @@ public class ShowTable extends JFrame{
     public ShowTable(){
         setContentPane(PanelTable);
         setTitle("Countries");
-        setSize(550,500);
-        setLocation(700,250);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(550,420);
+        setLocation(700,350);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
         try {
